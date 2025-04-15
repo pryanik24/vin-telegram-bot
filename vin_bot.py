@@ -4,8 +4,13 @@ import requests
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-# Вставь сюда свой Telegram токен
-TELEGRAM_TOKEN = "YOUR_BOT_TOKEN"
+import os  # добавь в начало, если ещё нет
+
+TELEGRAM_TOKEN = os.getenv("BOT_TOKEN")
+if not TELEGRAM_TOKEN:
+    logging.error("❌ BOT_TOKEN не установлен. Проверь переменные окружения.")
+    exit(1)
+
 
 # Логгирование
 logging.basicConfig(
