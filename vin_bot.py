@@ -25,7 +25,7 @@ def is_valid_vin(vin: str) -> bool:
 def get_vin_info(vin: str) -> str:
     try:
         headers = {"User-Agent": "Mozilla/5.0"}
-        url = f"https://vin01.ru/vin/{vin}"
+        url = f"https://vin-01.ru/checks/{vin}"
         response = requests.get(url, headers=headers, timeout=10)
         
         if response.status_code == 200 and "Информация о VIN" in response.text:
