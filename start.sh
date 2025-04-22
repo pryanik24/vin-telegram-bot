@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 vin_bot.py
+python3 main.py
